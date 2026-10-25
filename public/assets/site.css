@@ -354,3 +354,12 @@ canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,tr
 .nav .logo{font-size:18px;gap:14px}
 .nav .logo img{width:41px;height:41px}
 @media (max-width:480px){.nav .logo{font-size:15px;gap:10px;letter-spacing:.26em}.nav .logo img{width:36px;height:36px}.nav .tools{gap:6px}}
+
+/* ===== contact: LinkedIn QR, no web row ===== */
+.contact h2 b{display:block}
+.c-item.c-qr{grid-template-columns:90px auto 1fr;align-items:center;gap:18px}
+.c-qr .qr{display:block;line-height:0;border-radius:12px;box-shadow:0 10px 28px -14px rgba(0,0,0,.6);transition:transform .2s}
+.c-qr .qr:hover{transform:translateY(-2px)}
+.c-qr .qr img{width:132px;height:132px;display:block;border-radius:12px}
+.c-qr .qr-cap{font-size:14px;color:#C9CFDE;max-width:18ch;line-height:1.4}
+@media (max-width:420px){.c-item.c-qr{grid-template-columns:1fr auto}.c-qr .qr-cap{grid-column:1/-1}}

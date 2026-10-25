@@ -63,7 +63,7 @@
     "pr.2.h":"Budujemy współpracę na zaufaniu.","pr.2.p":"Najpierw słuchamy, potem przekładamy potrzeby na praktyczne rozwiązania i bierzemy pełną odpowiedzialność za to, co nam powierzono.",
     "pr.3.h":"Pracujemy z szacunkiem dla każdego.","pr.3.p":"Jasna komunikacja, profesjonalna realizacja i pamięć o tym, że ciężka praca wymaga dobrego odpoczynku.",
     "news.eyebrow":"News · AI i technologia","news.h2":"Notatki <b>z praktyki zarządczej</b>","news.all":"Wszystkie artykuły →",
-    "ct.eyebrow":"Kontakt","ct.h2":"Zainteresowany?<b>Porozmawiajmy.</b>","ct.lede":"Opowiedz, gdzie jest dziś Twoja organizacja i gdzie powinna być. Pierwsza rozmowa dotyczy Twojej sytuacji, nie naszej oferty.","ct.mail":"E-mail","ct.phone":"Telefon","ct.copy":"Kopiuj",
+    "ct.eyebrow":"Kontakt","ct.h2":"Zainteresowany?<b>Porozmawiajmy.</b>","ct.lede":"Opowiedz, gdzie jest dziś Twoja organizacja i gdzie powinna być. Pierwsza rozmowa dotyczy Twojej sytuacji, nie naszej oferty.","ct.mail":"E-mail","ct.phone":"Telefon","ct.copy":"Kopiuj","ct.qr":"Zeskanuj lub kliknij, aby połączyć się z Adamem na LinkedIn",
     "nv.back":"← Powrót","nv.lede":"Krótkie, praktyczne notatki o AI i technologii z perspektywy ludzi, którzy prowadzą firmy.","nv.note":"Przykładowe wpisy: przed publikacją zastąp je właściwymi artykułami.",
     "nav.contact":"Kontakt",
     "nav.menu":"Menu",
