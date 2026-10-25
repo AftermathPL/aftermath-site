@@ -366,3 +366,18 @@ canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,tr
 
 /* ===== no header divider ===== */
 .nav{border-bottom:0!important;box-shadow:none}
+
+/* ===== header logo: very slow rotation ===== */
+.nav .logo img{animation:logo-spin 90s linear infinite!important;transform-origin:50% 50%}
+@keyframes logo-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.nav .logo img{animation:none!important}}
+
+/* ===== home: hero network bleeds into the white header band and slightly below ===== */
+.hero{overflow:visible;overflow-x:clip}
+canvas.net-hero{top:-96px;height:calc(100% + 170px);opacity:.45;
+  -webkit-mask-image:linear-gradient(to left,#000 50%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 82%,transparent 100%);
+  mask-image:linear-gradient(to left,#000 50%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 82%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-composite:intersect}
+body:has(.hero) .nav{background:color-mix(in srgb,#FFFFFF 30%,transparent);-webkit-backdrop-filter:blur(1.5px);backdrop-filter:blur(1.5px)}
+main > section:first-child + section{position:relative;z-index:1}
+@media (max-width:900px){canvas.net-hero{opacity:.3}}
