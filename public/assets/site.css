@@ -363,3 +363,6 @@ canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,tr
 .c-qr .qr img{width:132px;height:132px;display:block;border-radius:12px}
 .c-qr .qr-cap{font-size:14px;color:#C9CFDE;max-width:18ch;line-height:1.4}
 @media (max-width:420px){.c-item.c-qr{grid-template-columns:1fr auto}.c-qr .qr-cap{grid-column:1/-1}}
+
+/* ===== no header divider ===== */
+.nav{border-bottom:0!important;box-shadow:none}
