@@ -349,3 +349,8 @@ canvas.neuron-net{position:absolute;pointer-events:none;z-index:0;top:0;right:0;
 canvas.net-hero{width:62%;-webkit-mask-image:linear-gradient(to left,#000 50%,transparent 100%);mask-image:linear-gradient(to left,#000 50%,transparent 100%);opacity:.6}
 canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,transparent 100%);mask-image:linear-gradient(to left,#000 45%,transparent 100%);opacity:.5}
 @media (max-width:900px){canvas.net-hero,canvas.net-page{width:100%;opacity:.35}}
+
+/* ===== header logo +20% ===== */
+.nav .logo{font-size:18px;gap:14px}
+.nav .logo img{width:41px;height:41px}
+@media (max-width:480px){.nav .logo{font-size:15px;gap:10px;letter-spacing:.26em}.nav .logo img{width:36px;height:36px}.nav .tools{gap:6px}}
