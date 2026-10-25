@@ -302,3 +302,22 @@ footer .f-logo img{width:26px;height:26px}
 .article{scroll-margin-top:90px}
 .links a.m-only{display:none}
 @media (max-width:900px){.links a.m-only{display:block;color:var(--navy);font-weight:600}}
+
+/* ===== typography: Inter Tight, regular weights, no heavy display ===== */
+:root{--f-display:"Inter Tight","Helvetica Neue",Arial,system-ui,sans-serif;--f-body:"Inter Tight","Helvetica Neue",Arial,system-ui,sans-serif}
+body{font-size:17px;line-height:1.65;letter-spacing:.005em}
+h1,h2{letter-spacing:-.025em}
+h3{letter-spacing:-.01em}
+.hero h1{font-size:clamp(36px,4.8vw,66px);line-height:1.12;font-weight:400}
+.hero h1 b{font-weight:500}
+.hero h1 em{font-style:normal}
+.sec-head h2,.leader-body h2,.contact h2{font-size:clamp(28px,3.4vw,46px);line-height:1.15;font-weight:400}
+.sec-head h2 b,.leader-body h2 b,.contact h2 b,.page-head h1 b{font-weight:500}
+.page-head h1{font-size:clamp(32px,4.2vw,58px);line-height:1.12;font-weight:400}
+.contact h2 b{display:inline}
+.stat strong{font-weight:400;font-size:clamp(30px,3.4vw,42px)}
+.res strong{font-weight:400}
+.svc h3,.step h3,.princ h3,.post h3,.tile h3,.article h2{font-weight:500}
+.next a{font-weight:400}
+.eyebrow,.svc .tag,.tile small,.res small,.crumbs{font-family:var(--f-body);font-weight:500;letter-spacing:.16em}
+.lede{font-size:18px}

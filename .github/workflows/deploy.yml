@@ -22,7 +22,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -d --env-password -u "$FTP_USERNAME" "$FTP_SERVER" -e "
+          lftp --env-password -u "$FTP_USERNAME" "$FTP_SERVER" -e "
             set ftp:ssl-force true;
             set ftp:passive-mode true;
             set ftp:prefer-epsv false;
