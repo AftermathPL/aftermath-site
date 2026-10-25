@@ -321,3 +321,31 @@ h3{letter-spacing:-.01em}
 .next a{font-weight:400}
 .eyebrow,.svc .tag,.tile small,.res small,.crumbs{font-family:var(--f-body);font-weight:500;letter-spacing:.16em}
 .lede{font-size:18px}
+
+/* ===== nav spacing + living logo mark ===== */
+.links{gap:40px}
+.links a{letter-spacing:.02em}
+@media (max-width:1180px){.links{gap:28px}}
+.logo{perspective:240px}
+.logo img{transform-origin:50% 50%;animation:mark-sway 10s ease-in-out infinite;will-change:transform}
+.logo:hover img{animation-duration:4s}
+@keyframes mark-sway{
+  0%,100%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg)}
+  25%{transform:rotateX(16deg) rotateY(-20deg) rotateZ(4deg)}
+  50%{transform:rotateX(-10deg) rotateY(14deg) rotateZ(-3deg)}
+  75%{transform:rotateX(8deg) rotateY(22deg) rotateZ(2deg)}
+}
+.hero::after,.page-head::after{animation:mark-drift 48s ease-in-out infinite;will-change:transform}
+@keyframes mark-drift{
+  0%,100%{transform:rotate(0deg) translate(0,0) scale(1)}
+  33%{transform:rotate(7deg) translate(-14px,10px) scale(1.02)}
+  66%{transform:rotate(-5deg) translate(10px,-8px) scale(.99)}
+}
+
+/* ===== neural network background (logo stays static) ===== */
+.logo img{animation:none!important}
+.hero.has-neuron::after,.page-head.has-neuron::after{content:none;display:none}
+canvas.neuron-net{position:absolute;pointer-events:none;z-index:0;top:0;right:0;height:100%}
+canvas.net-hero{width:62%;-webkit-mask-image:linear-gradient(to left,#000 50%,transparent 100%);mask-image:linear-gradient(to left,#000 50%,transparent 100%);opacity:.6}
+canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,transparent 100%);mask-image:linear-gradient(to left,#000 45%,transparent 100%);opacity:.5}
+@media (max-width:900px){canvas.net-hero,canvas.net-page{width:100%;opacity:.35}}
