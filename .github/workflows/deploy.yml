@@ -4,21 +4,29 @@ name: Publikacja aftermath.pl
 on:
   push:
     branches: [main]
-  workflow_dispatch:   # przycisk "Run workflow" do ręcznego uruchomienia
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Pobierz kod z repozytorium
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Wyślij pliki na serwer przez szyfrowane FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./public/
-          server-dir: ./
+      - name: Zainstaluj lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Wyślij pliki na serwer (szyfrowane FTP)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp --env-password -u "$FTP_USERNAME" "$FTP_SERVER" -e "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate true;
+            set net:max-retries 2;
+            set net:timeout 30;
+            mirror --reverse --delete --verbose --exclude-glob .well-known/ public/ ./;
+            bye"
