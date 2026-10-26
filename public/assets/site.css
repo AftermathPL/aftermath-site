@@ -374,10 +374,10 @@ canvas.net-page{width:60%;-webkit-mask-image:linear-gradient(to left,#000 45%,tr
 
 /* ===== home: hero network bleeds into the white header band and slightly below ===== */
 .hero{overflow:visible;overflow-x:clip}
-canvas.net-hero{top:-96px;height:calc(100% + 170px);opacity:.45;
+canvas.net-hero{top:-96px;height:calc(100% + 170px);opacity:.25;
   -webkit-mask-image:linear-gradient(to left,#000 50%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 82%,transparent 100%);
   mask-image:linear-gradient(to left,#000 50%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 5%,#000 82%,transparent 100%);
   -webkit-mask-composite:source-in;mask-composite:intersect}
 body:has(.hero) .nav{background:color-mix(in srgb,#FFFFFF 30%,transparent);-webkit-backdrop-filter:blur(1.5px);backdrop-filter:blur(1.5px)}
 main > section:first-child + section{position:relative;z-index:1}
-@media (max-width:900px){canvas.net-hero{opacity:.3}}
+@media (max-width:900px){canvas.net-hero{opacity:.18}}
