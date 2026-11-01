@@ -61,7 +61,8 @@
   function buildScene(variant, s){ seed=s; var S={neurons:[],branches:[],nodes:[],variant:variant}; BUILD[variant](S); return S; }
 
   /* ---------- rendering ---------- */
-  var BG=[251,247,238], TB=[44,64,104], HL=[170,190,220], GOLD='242,170,70';
+  var PALS={a:{BG:[251,247,238],TB:[44,64,104],HL:[170,190,220],GOLD:'242,170,70'},g:{BG:[238,240,243],TB:[46,56,74],HL:[176,192,214],GOLD:'232,158,72'}};
+  var BG,TB,HL,GOLD; function pal(){ var p=PALS[document.documentElement.dataset.theme==='g'?'g':'a']; BG=p.BG; TB=p.TB; HL=p.HL; GOLD=p.GOLD; } pal();
   function mix(c,f){ return 'rgb('+Math.round(c[0]+(BG[0]-c[0])*f)+','+Math.round(c[1]+(BG[1]-c[1])*f)+','+Math.round(c[2]+(BG[2]-c[2])*f)+')'; }
   function fog(z){ return Math.max(0.15, Math.min(0.88, 0.45+z*0.32)); }
   var scenes=[];
@@ -100,7 +101,7 @@
   function glow(ctx,x,y,R,a){ var g=ctx.createRadialGradient(x,y,0,x,y,R); g.addColorStop(0,'rgba(255,240,200,'+(0.95*a)+')'); g.addColorStop(0.25,'rgba('+GOLD+','+(0.75*a)+')'); g.addColorStop(1,'rgba('+GOLD+',0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,R,0,Math.PI*2); ctx.fill(); }
   function along(P,u){ var idx=u*(P.length-1), i=Math.floor(idx), fr=idx-i, a=P[i], b=P[Math.min(i+1,P.length-1)]; return [a[0]+(b[0]-a[0])*fr, a[1]+(b[1]-a[1])*fr, a[3]]; }
   function frame(sc, t){
-    size(sc); var o=sc.opt, ctx=sc.ctx, f=sc.fctx, w=sc.w, h=sc.h, dpr=sc.dpr, S=sc.scene;
+    pal(); size(sc); var o=sc.opt, ctx=sc.ctx, f=sc.fctx, w=sc.w, h=sc.h, dpr=sc.dpr, S=sc.scene;
     var ay=t*o.speed+(o.yaw||0.6), ax=(o.pitch||0.28)+0.12*Math.sin(t*o.speed*0.7), rot={cy:Math.cos(ay), sy:Math.sin(ay), cx:Math.cos(ax), sx:Math.sin(ax)};
     var items=[]; S.branches.forEach(function(b){ items.push({k:'b',o:b,z:project(sc,b.pts[Math.floor(b.pts.length/2)],rot)[2]}); });
     S.neurons.forEach(function(s){ items.push({k:'s',o:s,z:project(sc,s.c,rot)[2]-0.01}); });
