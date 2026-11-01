@@ -425,3 +425,18 @@ footer .f-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:w
 footer{margin-top:96px;border:0;color:#B4BCC9;
   background:var(--g-grain),radial-gradient(60% 120% at 100% 0%,rgba(93,114,144,.35),transparent 60%),radial-gradient(50% 120% at 0% 100%,rgba(201,138,59,.22),transparent 60%),linear-gradient(180deg,var(--g-dark2),var(--g-dark))}:root[data-theme="g"] footer .f-logo{color:#fff}:root[data-theme="g"] footer .f-logo img{filter:brightness(0) invert(1)}:root[data-theme="g"] footer .f-col b{color:#fff}:root[data-theme="g"] footer a{color:#B4BCC9}:root[data-theme="g"] footer a:hover{color:#fff}:root[data-theme="g"] footer .f-bottom{border-top-color:rgba(255,255,255,.12)}:root[data-theme="g"] @media (max-width:720px){.stats{grid-template-columns:1fr 1fr}:root[data-theme="g"] .stat,:root[data-theme="g"] .stat:first-child{padding:20px}:root[data-theme="g"] }
 .tile.dark h3,:root[data-theme="g"] .tile.dark .go{color:#fff}:root[data-theme="g"] footer .f-brand p,:root[data-theme="g"] footer .f-bottom{color:#9AA3B2}
+
+/* ===== header logo: 3D orb (four logo planes rotating like a ball) ===== */
+.nav .logo .orb{display:block;flex:none;width:41px;height:41px;perspective:260px}
+.nav .logo .orb-tilt,.nav .logo .orb-in{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d}
+.nav .logo .orb-tilt{animation:orb-wobble 13s ease-in-out infinite}
+.nav .logo .orb-in{animation:orb-spin 16s linear infinite}
+.nav .logo .orb img{position:absolute;inset:0;width:100%!important;height:100%!important;animation:none!important;backface-visibility:visible;-webkit-backface-visibility:visible}
+.nav .logo .orb img:nth-child(2){transform:rotateY(60deg);opacity:.85}
+.nav .logo .orb img:nth-child(3){transform:rotateY(120deg);opacity:.85}
+.nav .logo .orb img:nth-child(4){transform:rotateX(90deg);opacity:.7}
+.nav .logo:hover .orb-in{animation-duration:6s}
+@keyframes orb-spin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
+@keyframes orb-wobble{0%,100%{transform:rotateX(-20deg) rotateZ(14deg)}50%{transform:rotateX(18deg) rotateZ(-12deg)}}
+@media (max-width:480px){.nav .logo .orb{width:36px;height:36px}}
+@media (prefers-reduced-motion: reduce){.nav .logo .orb-tilt,.nav .logo .orb-in{animation:none!important}.nav .logo .orb img:not(:first-child){display:none}}
